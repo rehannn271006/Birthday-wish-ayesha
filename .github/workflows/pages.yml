@@ -1,43 +1,223 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ayesha ❤️</title>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+html {
+    scroll-behavior: smooth;
+}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+body {
+    background: #050307;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+/* BACKGROUND */
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background:
+        radial-gradient(circle at 50% 30%,
+        rgba(255, 45, 120, .18),
+        transparent 35%),
+        radial-gradient(circle at 20% 80%,
+        rgba(150, 50, 255, .12),
+        transparent 35%),
+        #050307;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 90px 90px, 140px 140px;
+    background-position: 0 0, 50px 70px;
+    opacity: .3;
+    animation: starsMove 15s linear infinite;
+}
+
+@keyframes starsMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-80px); }
+}
+
+/* MUSIC */
+
+.music {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.4);
+    background: rgba(0,0,0,.4);
+    color: white;
+    font-size: 22px;
+    z-index: 20;
+}
+
+/* START SCREEN */
+
+.start {
+    position: fixed;
+    inset: 0;
+    background: #050307;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    z-index: 100;
+    transition: 1.3s ease;
+}
+
+.start.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.start-content {
+    max-width: 500px;
+}
+
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 7px;
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.start h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 15vw, 95px);
+    font-weight: normal;
+    line-height: .85;
+}
+
+.start h1 span {
+    color: #ff5d98;
+    display: block;
+    margin-top: 10px;
+}
+
+.start p {
+    margin-top: 35px;
+    color: #aaa;
+    font-size: 16px;
+}
+
+.start button {
+    margin-top: 40px;
+    padding: 17px 35px;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.start button:hover {
+    background: #ff4f91;
+    border-color: #ff4f91;
+    transform: scale(1.05);
+}
+
+/* MAIN */
+
+.main {
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* HERO */
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-small {
+    color: #aaa;
+    letter-spacing: 6px;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(55px, 14vw, 100px);
+    line-height: .9;
+}
+
+.hero h1 span {
+    color: #ff5d98;
+}
+
+.hero p {
+    margin-top: 30px;
+    color: #bbb;
+    font-size: 17px;
+}
+
+/* LETTER */
+
+.letter-section {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255,60,120,.04),
+        transparent
+    );
+}
+
+.letter {
+    max-width: 650px;
+    padding: 40px 25px;
+}
+
+.letter-label {
+    color: #ff6b9f;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.letter h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 9vw, 55px);
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+.letter-text {
+    color: #d5d5d5;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 
