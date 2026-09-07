@@ -1,1 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Birthday Ayesha ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:
+    radial-gradient(circle at top,#42104f,#160719 55%,#050207);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:35px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hidden{
+    display:none!important;
+}
+
+h1{
+    font-size:clamp(40px,9vw,75px);
+    color:#ffd6e7;
+    text-shadow:
+    0 0 15px #ff4f9a,
+    0 0 40px #ff1778;
+}
+
+h2{
+    font-size:clamp(28px,7vw,50px);
+    color:#ffd4e6;
+    margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,80,160,.5);
+}
+
+p{
+    max-width:850px;
+    font-size:clamp(17px,4vw,22px);
+    line-height:1.8;
+    color:#ffeaf3;
+}
+
+button{
+    border:none;
+    padding:16px 30px;
+    border-radius:35px;
+    background:linear-gradient(90deg,#ff3d8d,#ff78ae);
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 0 25px #ff3d8d;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+
+/* =========================
+   PASSCODE SCREEN
+========================= */
+
+#lockScreen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    background:
+    radial-gradient(circle at 30% 20%,#681449,transparent 35%),
+    radial-gradient(circle at 80% 80%,#351052,transparent 35%),
+    #08040d;
+}
+
+.lockBox{
+    width:min(440px,100%);
+    padding:40px 25px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 50px rgba(255,50,150,.3);
+
+    animation:lockAppear 1s ease;
+}
+
+.lockIcon{
+    font-size:65px;
+    margin-bottom:15px;
+    animation:lockPulse 1.5s infinite;
+}
+
+.lockBox h1{
+    font-size:clamp(32px,8vw,48px);
+    margin-bottom:15px;
+}
+
+.lockBox p{
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+#passcode{
+    width:100%;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(0,0,0,.35);
+
+    color:white;
+
+    text-align:center;
+
+    font-size:23px;
+
+    letter-spacing:8px;
+
+    outline:none;
+
+    margin-bottom:18px;
+}
+
+#passcode:focus{
+    border-color:#ff65a7;
+
+    box-shadow:
+    0 0 20px rgba(255,70,150,.5);
+}
+
+#wrongCode{
+    min-height:25px;
+
+    margin-top:15px;
+
+    color:#ff9bc3;
+
+    font-size:15px;
+}
+
+@keyframes lockPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+@keyframes lockAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle{
+    position:fixed;
+
+    width:5px;
+    height:5px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:sparkle 2s infinite ease-in-out;
+
+    z-index:2;
+
+    pointer-events:none;
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+    }
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake{
+    width:260px;
+    height:250px;
+
+    position:relative;
+
+    margin:30px auto;
+}
+
+.layer{
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(40px);
+
+    height:58px;
+
+    border-radius:12px 12px 20px 20px;
+
+    opacity:0;
+
+    box-shadow:
+    0 10px 15px rgba(0,0,0,.3);
+}
+
+.layer1{
+    bottom:0;
+
+    width:225px;
+
+    background:
+    linear-gradient(#ff91bc,#d72e70);
+}
+
+.layer2{
+    bottom:55px;
+
+    width:195px;
+
+    background:
+    linear-gradient(#ffb1cf,#ed4d91);
+}
+
+.layer3{
+    bottom:110px;
+
+    width:165px;
+
+    background:
+    linear-gradient(#ffd3e4,#ff72aa);
+}
+
+.layer.show{
+    animation:buildCake .9s forwards;
+}
+
+@keyframes buildCake{
+
+    from{
+        opacity:0;
+        transform:translateX(-50%) translateY(40px) scale(.75);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(-50%) translateY(0) scale(1);
+    }
+
+}
+
+.icing{
+    position:absolute;
+
+    top:-4px;
+    left:0;
+
+    width:100%;
+    height:17px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 2px 8px rgba(255,255,255,.6);
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle{
+    position:absolute;
+
+    width:14px;
+    height:60px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        white 0,
+        white 8px,
+        #ff76ad 8px,
+        #ff76ad 16px
+    );
+
+    bottom:165px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+    border-radius:4px;
+}
+
+.flame{
+    position:absolute;
+
+    width:20px;
+    height:28px;
+
+    background:orange;
+
+    border-radius:50% 50% 50% 50%;
+
+    top:-28px;
+
+    left:-3px;
+
+    box-shadow:
+    0 0 20px 8px #ffb300,
+    0 0 45px 15px rgba(255,100,0,.4);
+
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+
+    from{
+        transform:scale(.85) rotate(-5deg);
+    }
+
+    to{
+        transform:scale(1.15) rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon{
+    position:fixed;
+
+    bottom:-150px;
+
+    width:65px;
+    height:80px;
+
+    border-radius:50%;
+
+    animation:float 8s linear forwards;
+
+    z-index:20;
+
+    cursor:pointer;
+
+    box-shadow:
+    inset -10px -10px 20px rgba(0,0,0,.2),
+    0 0 20px rgba(255,255,255,.1);
+}
+
+.balloon:before{
+    content:"";
+
+    position:absolute;
+
+    width:15px;
+    height:8px;
+
+    bottom:-4px;
+
+    left:25px;
+
+    background:inherit;
+
+    transform:rotate(45deg);
+}
+
+.balloon:after{
+    content:"";
+
+    position:absolute;
+
+    top:78px;
+
+    left:32px;
+
+    height:100px;
+
+    border-left:1px solid rgba(255,255,255,.7);
+}
+
+@keyframes float{
+
+    to{
+        bottom:110%;
+        transform:
+        translateX(50px)
+        rotate(15deg);
+    }
+
+}
+
+.pop{
+    animation:pop .4s forwards!important;
+}
+
+@keyframes pop{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.7);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(2.5);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-container{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+
+    max-width:1000px;
+}
+
+.card{
+    width:280px;
+
+    min-height:190px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 25px rgba(255,50,150,.15);
+
+    transform:
+    translateY(50px)
+    scale(.9);
+
+    opacity:0;
+}
+
+.card.show{
+    animation:cardIn .8s forwards;
+}
+
+@keyframes cardIn{
+
+    to{
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:1;
+    }
+
+}
+
+.card h3{
+    color:#ff9fc4;
+
+    margin-bottom:12px;
+
+    font-size:22px;
+}
+
+
+/* =========================
+   CHOCOLATES
+========================= */
+
+.chocolates{
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin:30px;
+
+    flex-wrap:wrap;
+}
+
+.chocolate{
+    width:70px;
+
+    height:75px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4a2114,
+        #b66a3b
+    );
+
+    box-shadow:
+    inset 0 0 0 5px #dca06d,
+    0 10px 20px #000;
+
+    animation:
+    chocolateFloat 1.5s infinite alternate;
+}
+
+.chocolate:nth-child(2){
+    animation-delay:.2s;
+}
+
+.chocolate:nth-child(3){
+    animation-delay:.4s;
+}
+
+.chocolate:nth-child(4){
+    animation-delay:.6s;
+}
+
+@keyframes chocolateFloat{
+
+    to{
+        transform:
+        translateY(-15px)
+        rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    background:
+    radial-gradient(
+        circle,
+        #641743,
+        #160615
+    );
+}
+
+.heart{
+    font-size:85px;
+
+    animation:
+    heartbeat 1s infinite;
+
+    filter:
+    drop-shadow(0 0 20px #ff3d8d);
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+}
+
+.small{
+    margin-top:20px;
+
+    opacity:.7;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .cake{
+        transform:scale(.9);
+    }
+
+    .balloon{
+        width:48px;
+        height:62px;
+    }
+
+    .card{
+        width:100%;
+        max-width:330px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     PASSWORD SCREEN
+===================================== -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="lockIcon">
+            🔐
+        </div>
+
+        <h1>
+            Something Special ❤️
+        </h1>
+
+        <p>
+            This little surprise is only for you, Ayesha.
+            <br><br>
+            Enter the secret passcode to open it.
+        </p>
+
+        <input
+            type="password"
+            id="passcode"
+            maxlength="6"
+            placeholder="••••••"
+            inputmode="numeric"
+            autocomplete="off"
+        >
+
+        <button onclick="unlockWish()">
+            Open My Birthday Wish 💌
+        </button>
+
+        <div id="wrongCode"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     START / CAKE
+===================================== -->
+
+<section id="start">
+
+    <h1>
+        Happy Birthday<br>
+        Ayesha ❤️
+    </h1>
+
+    <p style="margin-top:20px">
+
+        Before anything else...
+        <br>
+        I made something special for you.
+
+    </p>
+
+
+    <div class="cake">
+
+        <div class="layer layer1" id="l1">
+            <div class="icing"></div>
+        </div>
+
+        <div class="layer layer2" id="l2">
+            <div class="icing"></div>
+        </div>
+
+        <div class="layer layer3" id="l3">
+            <div class="icing"></div>
+        </div>
+
+        <div class="candle" id="candle">
+
+            <div class="flame"></div>
+
+        </div>
+
+    </div>
+
+
+    <button onclick="buildCake()">
+
+        Start Your Surprise 🎂
+
+    </button>
+
+</section>
+
+
+<!-- =====================================
+     APOLOGY
+===================================== -->
+
+<section id="apology" class="hidden">
+
+    <h2>
+        Before I Say Happy Birthday... 🥺
+    </h2>
+
+
+    <p>
+
+        Ayesha, there is something I want to say
+        from the deepest part of my heart.
+
+        <br><br>
+
+        I know I have made mistakes.
+        I know there were moments where I could have
+        handled things differently, spoken differently,
+        understood you better and been a better person.
+
+        <br><br>
+
+        I'm genuinely sorry for the things I did
+        that hurt you.
+
+        I'm sorry for the moments when my actions
+        didn't match the feelings I had for you.
+
+        <br><br>
+
+        I don't want this birthday wish to simply
+        be beautiful words.
+
+        I want it to be a reminder that I have
+        thought about my mistakes and understood
+        where I went wrong.
+
+        <br><br>
+
+        I can't change the past,
+        but I can change the person I become
+        from today.
+
+        <br><br>
+
+        And if my actions ever made you feel
+        unimportant, unheard or hurt,
+        I'm truly sorry.
+
+    </p>
+
+
+    <button
+        onclick="showPromises()"
+        style="margin-top:30px"
+    >
+
+        My Promises To You 🤍
+
+    </button>
+
+</section>
+
+
+<!-- =====================================
+     PROMISES
+===================================== -->
+
+<section id="promises" class="hidden">
+
+    <h2>
+        My Promises To You 🤝
+    </h2>
+
+
+    <div class="card-container">
+
+
+        <div class="card">
+
+            <h3>
+                01 — Respect
+            </h3>
+
+            <p>
+
+                I promise to respect your feelings,
+                your choices, your boundaries
+                and your peace.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                02 — Understanding
+            </h3>
+
+            <p>
+
+                I promise to listen instead of simply
+                reacting and to understand before judging.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                03 — Honesty
+            </h3>
+
+            <p>
+
+                I promise to be honest with you,
+                even when the truth isn't easy.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                04 — Growth
+            </h3>
+
+            <p>
+
+                I promise to work on myself instead
+                of expecting you to accept the same
+                old version of me.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                05 — Patience
+            </h3>
+
+            <p>
+
+                I promise not to force anything.
+                Some things need time,
+                and I will respect that.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                06 — Actions
+            </h3>
+
+            <p>
+
+                Most importantly,
+                I promise to let my actions
+                speak louder than my words.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        onclick="showBirthday()"
+        style="margin-top:35px"
+    >
+
+        Now... Your Birthday Message 🎁
+
+    </button>
+
+</section>
+
+
+<!-- =====================================
+     BIRTHDAY MESSAGE
+===================================== -->
+
+<section id="birthday" class="hidden">
+
+    <h1>
+        Happy Birthday Ayesha 🎂❤️
+    </h1>
+
+
+    <div class="chocolates">
+
+        <div class="chocolate"></div>
+
+        <div class="chocolate"></div>
+
+        <div class="chocolate"></div>
+
+        <div class="chocolate"></div>
+
+    </div>
+
+
+    <p>
+
+        Today is your day,
+        and I hope you realize how special you are.
+
+        <br><br>
+
+        I hope this new year of your life brings
+        you happiness that stays, peace that doesn't
+        disappear, people who genuinely value you,
+        and countless moments that make you smile
+        without even realizing it.
+
+        <br><br>
+
+        You deserve beautiful things.
+
+        You deserve genuine happiness.
+
+        You deserve someone who understands
+        the value of having you in their life.
+
+        <br><br>
+
+        And regardless of everything that happened
+        between us, I genuinely wish the best for you.
+
+        <br><br>
+
+        May every dream you've been silently
+        working towards come true.
+
+        May you become stronger, happier
+        and more successful.
+
+        May you always have reasons to smile.
+
+        <br><br>
+
+        And if someday you look back at this
+        little birthday website, I hope you remember
+        that there was someone who genuinely wished
+        happiness for you from his heart.
+
+        <br><br>
+
+        I hope your birthday is filled with
+        beautiful moments, sweet surprises,
+        lots of chocolates and a smile that
+        never leaves your face.
+
+        <br><br>
+
+        Once again...
+
+    </p>
+
+
+    <h2 style="margin-top:30px">
+
+        HAPPY BIRTHDAY AYЕSHA ❤️🎂✨
+
+    </h2>
+
+
+    <button
+        onclick="showFinal()"
+        style="margin-top:30px"
+    >
+
+        One Last Thing... ❤️
+
+    </button>
+
+</section>
+
+
+<!-- =====================================
+     FINAL
+===================================== -->
+
+<section id="final" class="final hidden">
+
+    <div class="heart">
+        ❤️
+    </div>
+
+
+    <h2>
+        A Little Message From Me
+    </h2>
+
+
+    <p>
+
+        I may not always have the perfect words.
+
+        I may make mistakes.
+
+        I may sometimes be a complete idiot.
+
+        <br><br>
+
+        But one thing I don't want you to doubt
+        is that I genuinely want good things for you.
+
+        <br><br>
+
+        I'm sorry for my mistakes.
+
+        Thank you for the moments you've given me.
+
+        And happy birthday to you, Ayesha.
+
+        <br><br>
+
+        Keep smiling.
+
+        Keep growing.
+
+        Keep becoming the person you want to be.
+
+        <br><br>
+
+        No matter where life takes us,
+        I will always wish happiness for you.
+
+        <br><br>
+
+        ❤️
+
+    </p>
+
+
+    <h2 style="margin-top:40px">
+
+        From yours,<br>
+
+        <span style="color:#ff80b2">
+
+            kam aqal Rehan ❤️
+
+        </span>
+
+    </h2>
+
+
+    <p class="small">
+
+        Made with a little bit of code
+        and a lot of feelings. ❤️
+
+    </p>
+
+</section>
+
+
+
+<script>
+
+
+/* =====================================
+   PASSWORD
+===================================== */
+
+function unlockWish(){
+
+    const enteredCode =
+        document.getElementById("passcode").value;
+
+    const correctCode = "271006";
+
+    const error =
+        document.getElementById("wrongCode");
+
+
+    if(enteredCode === correctCode){
+
+        const lockScreen =
+            document.getElementById("lockScreen");
+
+
+        lockScreen.style.transition =
+            "opacity 1s ease, transform 1s ease";
+
+        lockScreen.style.opacity = "0";
+
+        lockScreen.style.transform =
+            "scale(1.1)";
+
+
+        setTimeout(()=>{
+
+            lockScreen.style.display = "none";
+
+            document.body.style.overflow = "auto";
+
+        },1000);
+
+
+    }else{
+
+        error.innerHTML =
+            "Wrong passcode 🥺 Try again ❤️";
+
+        document.getElementById("passcode").value = "";
+
+    }
+
+}
+
+
+/* ENTER KEY */
+
+document
+.getElementById("passcode")
+.addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+
+        unlockWish();
+
+    }
+
+});
+
+
+/* =====================================
+   SPARKLES
+===================================== */
+
+for(let i=0;i<80;i++){
+
+    const sparkle =
+        document.createElement("div");
+
+    sparkle.className = "sparkle";
+
+    sparkle.style.left =
+        Math.random()*100 + "vw";
+
+    sparkle.style.top =
+        Math.random()*100 + "vh";
+
+    sparkle.style.animationDelay =
+        Math.random()*2 + "s";
+
+    document.body.appendChild(sparkle);
+
+}
+
+
+/* =====================================
+   BALLOONS
+===================================== */
+
+function createBalloons(){
+
+    const colors = [
+
+        "#ff4f91",
+        "#ff77aa",
+        "#9b59ff",
+        "#5cc8ff",
+        "#ffd166"
+
+    ];
+
+
+    for(let i=0;i<18;i++){
+
+        const balloon =
+            document.createElement("div");
+
+
+        balloon.className = "balloon";
+
+
+        balloon.style.left =
+            Math.random()*95 + "vw";
+
+
+        balloon.style.background =
+            colors[
+                Math.floor(
+                    Math.random()*colors.length
+                )
+            ];
+
+
+        balloon.style.animationDelay =
+            Math.random()*2 + "s";
+
+
+        document.body.appendChild(balloon);
+
+
+        balloon.addEventListener("click",()=>{
+
+            balloon.classList.add("pop");
+
+
+            createPopEffect(
+                balloon.offsetLeft,
+                balloon.offsetTop
+            );
+
+
+            setTimeout(()=>{
+
+                balloon.remove();
+
+            },400);
+
+        });
+
+    }
+
+}
+
+
+/* =====================================
+   BALLOON POP SPARKLES
+===================================== */
+
+function createPopEffect(x,y){
+
+    for(let i=0;i<12;i++){
+
+        const particle =
+            document.createElement("div");
+
+
+        particle.style.position = "fixed";
+
+        particle.style.left = x + "px";
+
+        particle.style.top = y + "px";
+
+        particle.style.width = "7px";
+
+        particle.style.height = "7px";
+
+        particle.style.background = "white";
+
+        particle.style.borderRadius = "50%";
+
+        particle.style.zIndex = "100";
+
+        particle.style.pointerEvents = "none";
+
+
+        document.body.appendChild(particle);
+
+
+        const angle =
+            Math.random()*Math.PI*2;
+
+        const distance =
+            30 + Math.random()*80;
+
+
+        particle.animate(
+
+            [
+
+                {
+                    transform:"translate(0,0)",
+                    opacity:1
+                },
+
+                {
+                    transform:
+                    `translate(
+                        ${Math.cos(angle)*distance}px,
+                        ${Math.sin(angle)*distance}px
+                    )`,
+                    opacity:0
+                }
+
+            ],
+
+            {
+                duration:700,
+                easing:"ease-out"
+            }
+
+        );
+
+
+        setTimeout(()=>{
+
+            particle.remove();
+
+        },700);
+
+    }
+
+}
+
+
+/* =====================================
+   CAKE
+===================================== */
+
+function buildCake(){
+
+    document
+    .getElementById("l1")
+    .classList.add("show");
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("l2")
+        .classList.add("show");
+
+    },800);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("l3")
+        .classList.add("show");
+
+    },1600);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("candle")
+        .style.display = "block";
+
+
+        createBalloons();
+
+
+    },2500);
+
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("apology")
+        .classList.remove("hidden");
+
+
+        document
+        .getElementById("apology")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },4200);
+
+}
+
+
+/* =====================================
+   PROMISES
+===================================== */
+
+function showPromises(){
+
+    const promises =
+        document.getElementById("promises");
+
+
+    promises.classList.remove("hidden");
+
+
+    promises.scrollIntoView({
+        behavior:"smooth"
+    });
+
+
+    const cards =
+        document.querySelectorAll(".card");
+
+
+    cards.forEach((card,index)=>{
+
+        setTimeout(()=>{
+
+            card.classList.add("show");
+
+        },index*350);
+
+    });
+
+
+}
+
+
+/* =====================================
+   BIRTHDAY
+===================================== */
+
+function showBirthday(){
+
+    const birthday =
+        document.getElementById("birthday");
+
+
+    birthday.classList.remove("hidden");
+
+
+    birthday.scrollIntoView({
+        behavior:"smooth"
+    });
+
+
+    createBalloons();
+
+}
+
+
+/* =====================================
+   FINAL
+===================================== */
+
+function showFinal(){
+
+    const final =
+        document.getElementById("final");
+
+
+    final.classList.remove("hidden");
+
+
+    final.scrollIntoView({
+        behavior:"smooth"
+    });
+
+
+    createBalloons();
+
+}
+
+</script>
+
+</body>
+</html>
